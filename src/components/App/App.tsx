@@ -54,16 +54,16 @@ function App() {
     setCards([]);
   };
 
-  const handleLoadMore = () => {
+  const handleLoadMore = (): void => {
     setPage(page + 1);
   };
 
-  const handleImgClick = (url, alt) => {
+  const handleImgClick = (url, alt): void => {
     setModalImage({ url, alt });
     setIsOpen(true);
   };
 
-  function closeModal() {
+  function closeModal(): void {
     setIsOpen(false);
   }
 

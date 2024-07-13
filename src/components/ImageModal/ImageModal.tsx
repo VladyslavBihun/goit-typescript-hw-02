@@ -1,7 +1,14 @@
-// ImageModal.tsx
+// ImageModal.tsx done
 
 import Modal from "react-modal";
 import css from "./ImageModal.module.css";
+
+interface ImageModalProps {
+  isOpen: boolean;
+  onRequestClose: () => void;
+  imageUrl: string;
+  imageAlt: string;
+}
 
 const customStyles = {
   content: {
@@ -20,7 +27,12 @@ const customStyles = {
   },
 };
 
-const ImageModal = ({ isOpen, onRequestClose, imageUrl, imageAlt }) => {
+const ImageModal: React.FC<ImageModalProps> = ({
+  isOpen,
+  onRequestClose,
+  imageUrl,
+  imageAlt,
+}) => {
   return (
     <Modal isOpen={isOpen} onRequestClose={onRequestClose} style={customStyles}>
       <div className={css.modalContent}>

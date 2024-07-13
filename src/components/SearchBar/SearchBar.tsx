@@ -1,4 +1,4 @@
-// SearchBar.tsx
+// SearchBar.tsx done
 
 import toast, { Toaster } from "react-hot-toast";
 import css from "./SearchBar.module.css";
@@ -11,11 +11,11 @@ type SearchBarProps = {
 const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
   const [inputValue, setInputValue] = useState<string>("");
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
     setInputValue(event.target.value);
   };
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
 
     if (inputValue === "") {

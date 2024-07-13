@@ -1,9 +1,15 @@
-// ImageGallery.tsx
+// ImageGallery.tsx done
 
+import { ImageCardData, ImgClickProp } from "../../types";
 import ImageCard from "../ImageCard/ImageCard";
 import css from "./ImageGallery.module.css";
 
-const ImageGallery = ({ cards, onImgClick }) => {
+interface ImageGalleryProps {
+  cards: ImageCardData[];
+  onImgClick: ImgClickProp;
+}
+
+const ImageGallery: React.FC<ImageGalleryProps> = ({ cards, onImgClick }) => {
   return (
     <ul className={css.list}>
       {cards.map((card) => (

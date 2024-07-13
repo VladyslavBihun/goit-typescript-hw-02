@@ -1,10 +1,15 @@
 // types.ts
 
 export interface ImageCardData {
-  id: string;
+  id: string | number;
   urls: {
     regular: string;
     small: string;
   };
-  alt_description: string;
+  altDescription: string;
+}
+
+export interface ImgClickProp {
+  url: string;
+  alt: string;
 }
