@@ -2,28 +2,38 @@
 
 import toast, { Toaster } from "react-hot-toast";
 import css from "./SearchBar.module.css";
+import { useState } from "react";
 
-const SearchBar = ({ onSearch }) => {
-  const notify = () => toast("You must enter text to search for a picture.");
+type SearchBarProps = {
+  onSearch: (searchWord: string) => void;
+};
 
-  const handleSubmit = (event) => {
+const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
+  const [inputValue, setInputValue] = useState<string>("");
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(event.target.value);
+  };
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const form = event.target;
-    const searchWord = form.elements.searchWord.value;
 
-    if (form.elements.searchWord.value === "") {
-      notify();
+    if (inputValue === "") {
+      toast("You must enter text to search for a picture.");
       return;
     }
-    onSearch(searchWord);
-    form.reset();
+    onSearch(inputValue);
+    setInputValue("");
   };
+
   return (
     <header className={css.header}>
       <form className={css.form} onSubmit={handleSubmit}>
         <input
           className={css.input}
           type="text"
+          value={inputValue}
+          onChange={handleChange}
           name="searchWord"
           autoComplete="off"
           autoFocus
