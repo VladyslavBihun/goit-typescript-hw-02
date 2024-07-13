@@ -1,5 +1,3 @@
-// img-api.ts
-
 import axios from "axios";
 import { ImageCardData } from "./types";
 
@@ -13,7 +11,7 @@ interface Response {
 
 const fetchImages = async (
   searchWord: string,
-  page: string
+  page: number
 ): Promise<Response> => {
   const response = await axios.get("search/photos", {
     params: {

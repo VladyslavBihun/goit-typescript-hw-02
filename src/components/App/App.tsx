@@ -1,5 +1,3 @@
-// App.tsx
-
 import { useEffect, useState } from "react";
 import fetchImages from "../../img-api";
 import ImageGallery from "../ImageGallery/ImageGallery";
@@ -15,7 +13,7 @@ interface ModalData {
   alt: string;
 }
 
-function App() {
+const App: React.FC = () => {
   const [searchWord, setSearchWord] = useState<string>("");
   const [cards, setCards] = useState<ImageCardData[]>([]);
   const [page, setPage] = useState<number>(1);
@@ -48,7 +46,7 @@ function App() {
     getData();
   }, [page, searchWord]);
 
-  const handleSearch = async (searchWord) => {
+  const handleSearch = async (searchWord: string) => {
     setSearchWord(searchWord);
     setPage(1);
     setCards([]);
@@ -58,7 +56,7 @@ function App() {
     setPage(page + 1);
   };
 
-  const handleImgClick = (url, alt): void => {
+  const handleImgClick = (url: string, alt: string): void => {
     setModalImage({ url, alt });
     setIsOpen(true);
   };
@@ -88,6 +86,6 @@ function App() {
       )}
     </>
   );
-}
+};
 
 export default App;

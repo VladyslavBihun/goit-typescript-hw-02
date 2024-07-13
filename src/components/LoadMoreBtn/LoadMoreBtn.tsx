@@ -1,5 +1,3 @@
-// LoadMoreBtn.tsx done
-
 import css from "./LoadMoreBtn.module.css";
 interface LoadMoreBtnProps {
   onClick: () => void;

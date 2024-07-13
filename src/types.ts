@@ -1,5 +1,3 @@
-// types.ts
-
 export interface ImageCardData {
   id: string | number;
   urls: {
@@ -9,7 +7,4 @@ export interface ImageCardData {
   altDescription: string;
 }
 
-export interface ImgClickProp {
-  url: string;
-  alt: string;
-}
+export type ImgClickProp = (url: string, alt: string) => void;

@@ -1,5 +1,3 @@
-// SearchBar.tsx done
-
 import toast, { Toaster } from "react-hot-toast";
 import css from "./SearchBar.module.css";
 import { useState } from "react";

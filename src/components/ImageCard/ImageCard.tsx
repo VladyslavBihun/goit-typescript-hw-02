@@ -1,5 +1,3 @@
-// ImageCard.tsx
-
 import { ImageCardData, ImgClickProp } from "../../types";
 import css from "./ImageCard.module.css";
 
