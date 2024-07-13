@@ -1,11 +1,20 @@
 // img-api.ts
 
 import axios from "axios";
+import { ImageCardData } from "./types";
 
 axios.defaults.baseURL = "https://api.unsplash.com/";
-const KEY = "j5bai0Y9_YKdbomWmcoepa0kkVl5Y8BVRmwVG5xoUh0";
+const KEY: string = "j5bai0Y9_YKdbomWmcoepa0kkVl5Y8BVRmwVG5xoUh0";
 
-const fetchImages = async (searchWord, page) => {
+interface Response {
+  results: ImageCardData[];
+  totalPages: number;
+}
+
+const fetchImages = async (
+  searchWord: string,
+  page: string
+): Promise<Response> => {
   const response = await axios.get("search/photos", {
     params: {
       query: searchWord,

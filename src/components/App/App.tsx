@@ -8,17 +8,23 @@ import Loader from "../Loader/Loader";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import LoadMoreBtn from "../LoadMoreBtn/LoadMoreBtn";
 import ImageModal from "../ImageModal/ImageModal";
+import { ImageCardData } from "../../types";
+
+interface ModalData {
+  url: string;
+  alt: string;
+}
 
 function App() {
-  const [searchWord, setSearchWord] = useState("");
-  const [cards, setCards] = useState([]);
-  const [page, setPage] = useState(1);
-  const [isLoading, setIsLoading] = useState(false);
-  const [isError, setIsError] = useState(false);
-  const [totalPages, setTotalPages] = useState(1);
+  const [searchWord, setSearchWord] = useState<string>("");
+  const [cards, setCards] = useState<ImageCardData[]>([]);
+  const [page, setPage] = useState<number>(1);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isError, setIsError] = useState<boolean>(false);
+  const [totalPages, setTotalPages] = useState<number>(1);
 
-  const [modalIsOpen, setIsOpen] = useState(false);
-  const [modalImage, setModalImage] = useState({ url: "", alt: "" });
+  const [modalIsOpen, setIsOpen] = useState<boolean>(false);
+  const [modalImage, setModalImage] = useState<ModalData>({ url: "", alt: "" });
 
   useEffect(() => {
     if (searchWord === "") {
