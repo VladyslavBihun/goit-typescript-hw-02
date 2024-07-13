@@ -1,3 +1,5 @@
+// ImageCard.tsx
+
 import css from "./ImageCard.module.css";
 
 const ImageCard = ({ card, onImgClick }) => {

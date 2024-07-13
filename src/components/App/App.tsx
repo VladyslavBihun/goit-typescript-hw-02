@@ -1,11 +1,13 @@
+// App.tsx
+
 import { useEffect, useState } from "react";
-import fetchImages from "../img-api";
-import ImageGallery from "./ImageGallery/ImageGallery";
-import SearchBar from "./SearchBar/SearchBar";
-import Loader from "./Loader/Loader";
-import ErrorMessage from "./ErrorMessage/ErrorMessage";
-import LoadMoreBtn from "./LoadMoreBtn/LoadMoreBtn";
-import ImageModal from "./ImageModal/ImageModal";
+import fetchImages from "../../img-api";
+import ImageGallery from "../ImageGallery/ImageGallery";
+import SearchBar from "../SearchBar/SearchBar";
+import Loader from "../Loader/Loader";
+import ErrorMessage from "../ErrorMessage/ErrorMessage";
+import LoadMoreBtn from "../LoadMoreBtn/LoadMoreBtn";
+import ImageModal from "../ImageModal/ImageModal";
 
 function App() {
   const [searchWord, setSearchWord] = useState("");

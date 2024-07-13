@@ -1,3 +1,5 @@
+// LoadMoreBtn.tsx
+
 import css from "./LoadMoreBtn.module.css";
 
 const LoadMoreBtn = ({ onClick }) => {
